@@ -1,0 +1,28 @@
+#include<iostream>
+using namespace std;
+
+void Fibbo(int o, int t, int l, int r);
+
+
+int main() {
+	int o = 0;
+	int t = 1;
+	int l = 0;
+	int r = 0;
+	cout << "how many times do you want the fibonacci sequence to run" << endl;
+	cin >> l;
+	Fibbo(o, t, l, r);
+}
+
+
+void Fibbo(int o, int t, int l, int r) {
+	cout << "numbers so far are " << o << " and " << t << endl;
+	int j = o + t;
+	cout << "the fibonacci number is now " << j << endl;
+	o = t;
+	t = j;
+	r++;
+	if (r < l)
+		Fibbo(o, t, l, r);
+
+}
